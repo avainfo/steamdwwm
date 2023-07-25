@@ -1,14 +1,16 @@
 import React from "react";
 
-export default function Cookie({setScore, score}) {
+export default function Cookie({setScore, score, clickPower, colNumber}) {
 
     const cookieStyle = {
         width: "20vw",
         height: "20vw",
+        gridRow: 2,
+        gridColumn: colNumber,
     }
 
     const handleClick = () => {
-        setScore(score + 1);
+        setScore(score + clickPower);
         console.log(score);
     }
 
