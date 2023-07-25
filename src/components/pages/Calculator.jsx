@@ -19,7 +19,7 @@ export default function Calculator() {
             <AdditionLevel changeResult={changeResult}/><br/>
             <TextField
                 variant={"outlined"}
-                // defaultValue={"Alors ??? "}
+                //defaultValue={"Alors ??? "}
                 placeholder="Alors ???"
                 onChange={event => setInputKeybord(event.target.value)}
             /><br/>
