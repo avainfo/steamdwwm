@@ -8,13 +8,17 @@ import Documentation from "../pages/Documentation";
 import RightPrice from "../pages/RightPrice";
 import Calculator from "../pages/Calculator";
 import Crabs from "../pages/Crabs";
+import Memory from "../pages/Memory";
+import CoockieClicker from "../pages/CoockieClicker";
 
 const itemMenus=[
     {key:"1", path:"/", label:"Accueil"},
     {key:"2", path:"/rightPrice", label:"Le juste prix"},
     {key:"3", path:"/calculator", label:"Calculator"},
     {key:"4", path:"/crabs", label:"Morpion"},
-    {key:"5", path: "/documentation", label:"Documents"}
+    {key:"5", path: "/documentation", label:"Documents"},
+    {key:"7", path: "/memory", label:"Memory"},
+    {key:"7", path: "/cookieClicker", label:"CookieClicker"}
 ];
 
 export default function MenuTop() {
@@ -61,6 +65,8 @@ export function LayoutMain() {
                <Route path={"/calculator"} element={<Calculator/>}/>
                <Route path={"/crabs"} element={<Crabs/>}/>
                <Route path={"/documentation"} element={<Documentation/>}/>
+               <Route path={"/memory"} element={<Memory/>}/>
+               <Route path={"/cookieClicker"} element={<CoockieClicker/>}/>
            </Routes>
        </>
     )
