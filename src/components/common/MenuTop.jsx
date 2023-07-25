@@ -10,15 +10,17 @@ import Calculator from "../pages/Calculator";
 import Crabs from "../pages/Crabs";
 import Memory from "../pages/Memory";
 import CoockieClicker from "../pages/CoockieClicker";
+import Gif from "../pages/Gif";
 
 const itemMenus=[
     {key:"1", path:"/", label:"Accueil"},
-    {key:"2", path:"/rightPrice", label:"Le juste prix"},
-    {key:"3", path:"/calculator", label:"Calculator"},
-    {key:"4", path:"/crabs", label:"Morpion"},
-    {key:"5", path: "/documentation", label:"Documents"},
-    {key:"7", path: "/memory", label:"Memory"},
-    {key:"7", path: "/cookieClicker", label:"CookieClicker"}
+    //{key:"2", path:"/rightPrice", label:"Le juste prix"},
+    {key:"2", path:"/calculator", label:"Calculator"},
+    //{key:"4", path:"/crabs", label:"Morpion"},
+    //{key:"5", path: "/documentation", label:"Documents"},
+    {key:"3", path: "/memory", label:"Memory"},
+    {key:"4", path: "/cookieClicker", label:"CookieClicker"},
+    {key:"5", path: "/gif", label:"Gif"}
 ];
 
 export default function MenuTop() {
@@ -67,6 +69,7 @@ export function LayoutMain() {
                <Route path={"/documentation"} element={<Documentation/>}/>
                <Route path={"/memory"} element={<Memory/>}/>
                <Route path={"/cookieClicker"} element={<CoockieClicker/>}/>
+               <Route path={"/gif"} element={<Gif/>}/>
            </Routes>
        </>
     )
