@@ -1,4 +1,4 @@
-// initialState, si vous en avez besoin
+
 const initialState = {
     data: [],
     loading: false,
