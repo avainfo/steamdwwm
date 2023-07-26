@@ -34,7 +34,6 @@ export default function Grid({size, components}) {
                 </div>
             );
             i++;
-            console.log("I: " + i)
         }
     };
 

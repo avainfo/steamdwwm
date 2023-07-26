@@ -6,7 +6,6 @@ export default function GifImage({item}) {
             alt="gif"
             style={{
                 width: "100%",
-                display: "flex",
             }}
         />
     );
