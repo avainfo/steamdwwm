@@ -11,7 +11,8 @@ import Crabs from "../pages/Crabs";
 import Memory from "../pages/Memory";
 import CoockieClicker from "../pages/CoockieClicker";
 import Gif from "../pages/Gif";
-import ReduxPages from "../reducer/ReduxPages"
+import ReduxPages from "../reducer/ReduxPages";
+import CarClicker from "../pages/CarClicker";
 
 const itemMenus=[
     {key:"1", path:"/", label:"Accueil"},
@@ -22,7 +23,8 @@ const itemMenus=[
     {key:"3", path: "/memory", label:"Memory"},
     {key:"4", path: "/cookieClicker", label:"CookieClicker"},
     {key:"5", path: "/gif", label:"Gif"},
-    {key:"6", path: "/redux", label:"Redux"}
+    {key:"6", path: "/redux", label:"Redux"},
+    {key:"7", path: "/carClicker", label:"CarClicker"}
 ];
 
 export default function MenuTop() {
@@ -73,6 +75,7 @@ export function LayoutMain() {
                <Route path={"/cookieClicker"} element={<CoockieClicker/>}/>
                <Route path={"/gif"} element={<Gif/>}/>
                <Route path={"/redux"} element={<ReduxPages/>}/>
+               <Route path={"/carClicker"} element={<CarClicker/>}></Route>
            </Routes>
        </>
     )
