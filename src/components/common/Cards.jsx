@@ -39,7 +39,6 @@ export default function Cards({id, url, pos, rota}) {
     return (
         <div style={cardStyle} onClick={
             function (e) {
-                console.log("test");
                 setOpacity(0);
             }
         }>
