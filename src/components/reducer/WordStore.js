@@ -1,7 +1,7 @@
 import {legacy_createStore as createStore} from "redux";
 
 const initialState = {
-    words: ["coucou", "test"],
+    words: ["test"],
 };
 
 const wordReducer = (state = initialState, action) => {

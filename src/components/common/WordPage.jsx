@@ -1,13 +1,16 @@
 import {connect} from "react-redux";
 
 const wordPage = ({words, add, remove}) => {
-    return (<div onClick={() => {
-        console.log(words)
-        remove("test");
-    }}>
-        test
-    </div>)
+    return (
+        <div onClick={() => {
+            remove("test");
+            console.log(words)
+        }}>
+            test
+        </div>
+    )
 }
+
 const mapStateToProps = (state) => {
     return {
         words: state.words,
