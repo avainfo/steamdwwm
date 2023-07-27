@@ -1,30 +1,36 @@
-import React from 'react';
-import {connect} from 'react-redux';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { fetchDataFromFirestore } from '../db/action';
 
-const App = ({counter, text, increment, decrement, changeText}) => {
+const YourComponent = ({ data, loading, error, fetchDataFromFirestore }) => {
+    useEffect(() => {
+        fetchDataFromFirestore();
+    }, [fetchDataFromFirestore]);
+
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
+
     return (
         <div>
-            <h1>{text} {counter}</h1>
-            <button onClick={increment}>Increment</button>
-            <button onClick={decrement}>Decrement</button>
-            <button onClick={changeText}>Change Text</button>
+            {/* Utilisez les données de votre store Redux ici */}
+            {data.map((item) => (
+                <div key={item.id}>{item.name}</div>
+            ))}
         </div>
     );
 };
 
 const mapStateToProps = (state) => {
     return {
-        counter: state.counter,
-        text: state.text,
+        data: state.data.data,
+        loading: state.data.loading,
+        error: state.data.error,
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        increment: () => dispatch({type: 'INCREMENT'}),
-        decrement: () => dispatch({type: 'DECREMENT'}),
-        changeText: () => dispatch({type: 'CHANGE_TEXT'}),
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, { fetchDataFromFirestore })(YourComponent);

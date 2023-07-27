@@ -1,13 +1,18 @@
-// initialState, si vous en avez besoin
+// dataReducer.js
 const initialState = {
     data: [],
     loading: false,
     error: null,
 };
 
-// Votre reducer
-const yourReducer = (state = initialState, action) => {
+const dataReducer = (state = initialState, action) => {
     switch (action.type) {
+        case 'FETCH_DATA_REQUEST':
+            return {
+                ...state,
+                loading: true,
+                error: null,
+            };
         case 'FETCH_DATA_SUCCESS':
             return {
                 ...state,
@@ -22,11 +27,9 @@ const yourReducer = (state = initialState, action) => {
                 loading: false,
                 error: action.payload,
             };
-        // Autres cas pour gérer d'autres actions si nécessaire
-
         default:
             return state;
     }
 };
 
-export default yourReducer;
+export default dataReducer;

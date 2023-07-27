@@ -1,32 +1,11 @@
-import {createStore} from 'redux';
+import {legacy_createStore as createStore, applyMiddleware, combineReducers} from 'redux';
+import thunk from 'redux-thunk';
+import dataReducer from './Reducers';
 
-const initialState = {
-    counter: 0,
-    text: "Coucou",
-};
+const rootReducer = combineReducers({
+    data: dataReducer,
+});
 
-const rootReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'INCREMENT':
-            return {
-                ...state,
-                counter: state.counter + 1,
-            };
-        case 'DECREMENT':
-            return {
-                ...state,
-                counter: state.counter - 1,
-            };
-        case 'CHANGE_TEXT':
-            return {
-                ...state,
-                text: state.text === "Coucou" ? "Changé" : "Coucou",
-            }
-        default:
-            return state;
-    }
-};
-
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 export default store;
