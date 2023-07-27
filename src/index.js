@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
-import WordStore from "./components/reducer/WordStore";
+import {WordStore} from "./components/reducer/WordStore";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
